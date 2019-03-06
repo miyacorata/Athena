@@ -1,6 +1,11 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * Class Idol
+ * @property Idol_model $idol_model
+ * @property Unit_model $unit_model
+ */
 class Info extends CI_Controller {
 
 	/**
@@ -20,9 +25,13 @@ class Info extends CI_Controller {
 	 */
 	public function hello()
 	{
-	    $data['load_css'] = array('top');
-	    $this->load->view('template/header',$data);
-		$this->load->view('welcome_message');
+	    $this->load->model('idol_model');
+	    $this->load->model('unit_model');
+	    $data['birthday'] = $this->idol_model->get_birthday_idol();
+	    $data['units'] = $this->unit_model->get_all_unit();
+	    $meta['load_css'] = array('top','idollist');
+	    $this->load->view('template/header',$meta);
+		$this->load->view('welcome_message',$data);
 		$this->load->view('template/footer');
 	}
 

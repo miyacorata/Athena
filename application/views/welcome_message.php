@@ -1,5 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+if(empty($units)){
+    show_error("Required data 'units' is not declared.");
+}
 ?>
 
 <!--MAIN-->
@@ -30,8 +34,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </p>
         <h3>システム情報</h3>
         <p>
-            <?= config_item('system_name')." ".config_item('system_version') ?><br>
+            <?= config_item('system_name')." ".config_item('system_version') ?>
             on <?= $_SERVER['SERVER_NAME'] ?>
+        </p>
+        <p>
+            <a href="https://github.com/project-tsubasa/Athena" target="_blank">Repository on GitHub</a>
         </p>
     </div>
     <div id="mainbar">
@@ -39,6 +46,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p>
             ShinyColorsPortalへようこそ。ShinyColorsPortalは、アイドル・ユニットの情報を提供する非公式データベース・ポータルサイトです。
         </p>
+        <?php if(!empty($birthday)){
+
+            ?>
+            <h3>HappyBirthday!</h3>
+                <p>本日<?= date('n月j日') ?>がお誕生日のアイドルです。Happy Birthday!</p>
+            <?php foreach ($birthday as $idol){
+                ?>
+                <div class="idol button">
+                    <a href="<?= config_item('root_url')."idol/detail/".hsc($idol->name_r) ?>">
+                        <img src="<?= config_item('resource_root') ?>image/character/<?= hsc($idol->name_r) ?>/icon.jpg" alt="" class="idolicon">
+                    </a>
+                    <a href="<?= config_item('root_url')."idol/detail/".hsc($idol->name_r) ?>" class="idolname"><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></a>
+                    <table>
+                        <tr>
+                            <th>ユニット</th><td style="min-width: 125px"><?= hsc($units[$idol->unit_id - 1]->name) ?></td>
+                            <th>誕生日</th><td><?= ConvertDateString($idol->birthdate,'ja') ?></td>
+                            <th>年齢</th><td><?= hsc($idol->age) ?>歳</td>
+                            <th>星座</th><td><?= hsc($idol->constellation) ?></td>
+                            <th>CV</th><td><?= hsc($idol->cv) ?></td>
+                        </tr>
+                    </table>
+                </div>
+                <?php
+            }
+        } ?>
         <h3>Menu</h3>
         <div class="buttonbox">
             <a href="<?= config_item('root_url') ?>idol" class="button il half">

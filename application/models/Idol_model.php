@@ -62,4 +62,12 @@ class Idol_model extends CI_Model{
         $result = $query->result();
         return $result;
     }
+
+    public function get_birthday_idol(){
+        $date = "'".date('2018-m-d')."'";
+        $query = $this->db->query('SELECT * FROM mrapid_scp.idol WHERE `birthdate` = '.$date.' ORDER BY `id` ASC');
+        $result = $query->result();
+        //if(empty($result))return null;
+        /*else*/ return $result;
+    }
 }
