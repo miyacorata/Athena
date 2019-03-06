@@ -1,0 +1,56 @@
+#top{
+    width: 100%;
+    margin: 0 0 5px;
+    padding: 10px 60px 0;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    box-sizing: border-box;
+    background: url("/resources/image/bg/seiseki.jpg") no-repeat center center;
+    background-size: cover;
+    text-align: center;
+}
+#site_title{
+    display: inline-block;
+    color: white;
+    /*height: 200px;*/
+    margin-left: 20px;
+    font-size: 20px;
+    text-shadow: 0 0 13px rgba(0,0,0,0.8);
+}
+
+#top_search{
+    margin: 10px 0 70px;
+    text-shadow: none;
+}
+#idol_search{
+    background: rgba(255,255,255,0.5);
+    border: none;
+    padding: 10px 15px;
+    margin: 10px 0;
+    width: 350px;
+    font-size: 18px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 1px 5px rgba(0,0,0,0.6);
+    transition: background-color 0.3s;
+}
+#idol_search:focus{
+    background: rgba(255,255,255,0.9);
+}
+
+#infobox{
+    background: rgba(0,0,0,0.05);
+    height: 400px;
+    overflow-y: scroll;
+    margin: 4px 0;
+    padding: 0 10px;
+    border-radius: 3px;
+    box-shadow: inset 0 0 3px rgba(0,0,0,0.2);
+}
+#infobox h4{
+    margin-left: -10px;
+    padding: 4px 5px 4px 10px;
+    background: rgba(255,255,255,0.5);
+    border-bottom-right-radius: 3px;
+    border-top-right-radius: 3px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.4);
+}

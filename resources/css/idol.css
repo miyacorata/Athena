@@ -1,0 +1,75 @@
+#profile{
+    float: right;
+    width: 790px;
+    padding-left: 10px;
+    margin-left: 10px;
+}
+#profile > *:first-child{
+    margin-top: 0;
+}
+
+#profile_table{
+    width: 90%;
+}
+
+#tachie{
+    position: absolute;
+    margin-left: -20px;
+    width: 520px;
+    height: 720px;
+    text-align: center;
+    overflow: hidden;
+}
+#tachie > img{
+    /*position: absolute;*/
+    /*bottom: 0;*/
+}
+
+#pagetitle > #unitlogo{
+    position: absolute;
+    right: calc(50vw - 650px);
+    top: 13px;
+    height: 80px;
+    max-width: 280px;
+    line-height: 80px;
+}
+#unitlogo > img{
+    max-width: 280px;
+    max-height: 80px;
+    vertical-align: middle;
+}
+
+#upper{
+    height: 700px;
+    margin-bottom: 15px;
+}
+#upper::after{
+    display: block;
+    height: 2px;
+    background: linear-gradient(90deg,rgba(0,0,0,0),rgba(0,0,0,4.0) 10%,rgba(0,0,0,0.4) 90%,rgba(0,0,0,0));
+    clear: both;
+}
+
+/* TAG */
+.tag{
+    text-decoration: none;
+    color: black;
+    transition: background-color 0.1s;
+
+    display: inline-block;
+    margin-right: 5px;
+    padding: 3px 10px;
+    border-radius: 3px;
+    background: white;
+    border-left: solid 5px red;
+    box-shadow: 0 0 4px rgba(0,0,0,0.5),inset 0 0 2px rgba(0,0,0,0.2);
+}
+.tag:hover{
+    background: whitesmoke;
+}
+
+#tag_table th{
+    background: none;
+    color: black;
+    text-align: right;
+}
