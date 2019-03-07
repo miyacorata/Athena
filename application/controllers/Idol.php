@@ -6,6 +6,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * Class Idol
  * @property Idol_model $idol_model
  * @property Unit_model $unit_model
+ * @property Tag_model $tag_model
  */
 class Idol extends CI_Controller {
 
@@ -36,8 +37,10 @@ class Idol extends CI_Controller {
         }
         $this->load->model('idol_model');
         $this->load->model('unit_model');
+        $this->load->model('tag_model');
         $meta['load_css'] = array("idol");
         $data['idol'] = $this->idol_model->get_idol($name,"roma");
+        $data['tags'] = $this->tag_model->get_tags_by_idolname($data['idol']->name);
         if(empty($data['idol'])){
             show_error("URL等に誤りがないか確認の上、もう一度お試しください。リンク切れ等の場合は管理者までご連絡ください。",404,"該当するアイドルが見つかりませんでした");
         }

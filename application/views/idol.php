@@ -89,10 +89,6 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                 </a>
             </div>
             <h3>このアイドルのタグ</h3>
-            <p class="notification">
-                Coming Soon!
-            </p>
-            <?php /* ?>
             <table id="tag_table">
                 <tr>
                     <th>Nickname</th>
@@ -123,7 +119,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                         <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: purple">占い</a>
                     </td>
                 </tr>
-            </table><?php */ ?>
+            </table>
 
         </div>
         <div id="tachie">
