@@ -7,6 +7,9 @@ if(empty($idol)){
 if(empty($unit)){
     show_error("Required data 'unit' is not declared.");
 }
+if(!isset($tags)){
+    show_error("Required data 'tags' is not declared.");
+}
 
 $urlname = urlencode($idol->name);
 //$protocol = !empty($_SERVER['HTTPS']) ? 'https://' : 'http://';
@@ -90,35 +93,19 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
             </div>
             <h3>このアイドルのタグ</h3>
             <table id="tag_table">
-                <tr>
-                    <th>Nickname</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Personality</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: red">ストイック</a>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: red">ネガティブ</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Appearance</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: deepskyblue">ミディアム</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Technical</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: orange">料理</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Favorite</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: purple">占い</a>
-                    </td>
-                </tr>
+                <?php $c_cat = ""; $tag_count = 0;
+                foreach ($tags as $tag){
+                    if($c_cat !== $tag->category){ // カテゴリチェンジ判定
+                        if($tag_count != 0) echo "</tr>".PHP_EOL;
+                        echo "<tr><th>".hsc($tag->category)."</th><td>";
+                        $c_cat = $tag->category;
+                    }
+                    $linktext = empty($tag->property) ? $tag->tagname : $tag->property."/".$tag->tagname;
+                    echo "<a href=\"javascript:void(0)\" class=\"tag\">".hsc($linktext)."</a>";
+                    //echo "<a href=\"".config_item('root_url')."search/tag/".hsc($linktext)."\" class=\"tag\">".hsc($linktext)."</a>";
+                    if($tag_count == count($tags))echo "</tr>".PHP_EOL;
+                }
+                ?>
             </table>
 
         </div>
