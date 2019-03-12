@@ -24,7 +24,7 @@ if(empty($units)){
     <div class="buttonbox">
         <?php foreach ($units as $unit){
             ?>
-            <a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($unit->slug) ?>" class="unit il half">
+            <a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($unit->slug) ?>" class="unit il trisection">
                 <img src="<?= config_item('resource_root') ?>image/card/<?= hsc($unit->slug) ?>.png" alt="">
                 <img src="<?= config_item('resource_root') ?>image/unitlogo/<?= hsc($unit->slug) ?>.png" alt=""><br>
                 <?= hsc($unit->name) ?>

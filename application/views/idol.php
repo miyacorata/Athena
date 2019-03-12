@@ -65,10 +65,10 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                     <th>3サイズ</th><td><?= hsc($idol->bust)."/".hsc($idol->weist)."/".hsc($idol->hip) ?></td>
                 </tr>
                 <tr>
-                    <th>特技</th><td colspan="5"><?= hsc($idol->skill) ?></td>
+                    <th>特技</th><td colspan="5"><?= empty($idol->skill) ? "<i>N/A</i>" : hsc($idol->skill) ?></td>
                 </tr>
                 <tr>
-                    <th>趣味</th><td colspan="5"><?= hsc($idol->hobby) ?></td>
+                    <th>趣味</th><td colspan="5"><?= empty($idol->hobby) ? "<i>N/A</i>" : hsc($idol->hobby) ?></td>
                 </tr>
             </table>
             <h3>百科事典・外部サイト</h3>
