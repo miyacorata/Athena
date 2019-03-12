@@ -92,38 +92,6 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
             <p class="notification">
                 Coming Soon!
             </p>
-            <?php /* ?>
-            <table id="tag_table">
-                <tr>
-                    <th>Nickname</th>
-                    <td></td>
-                </tr>
-                <tr>
-                    <th>Personality</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: red">ストイック</a>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: red">ネガティブ</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Appearance</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: deepskyblue">ミディアム</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Technical</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: orange">料理</a>
-                    </td>
-                </tr>
-                <tr>
-                    <th>Favorite</th>
-                    <td>
-                        <a href="<?= config_item('root_url') ?>search/tag/" class="tag" style="border-left-color: purple">占い</a>
-                    </td>
-                </tr>
-            </table><?php */ ?>
 
         </div>
         <div id="tachie">

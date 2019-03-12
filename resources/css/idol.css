@@ -16,11 +16,13 @@
     position: absolute;
     margin-left: -20px;
     width: 520px;
-    height: 720px;
+    height: 660px;
     text-align: center;
     overflow: hidden;
 }
 #tachie > img{
+    width: 520px;
+    height: auto;
     /*position: absolute;*/
     /*bottom: 0;*/
 }
@@ -40,7 +42,7 @@
 }
 
 #upper{
-    height: 700px;
+    height: 660px;
     margin-bottom: 15px;
 }
 #upper::after{
