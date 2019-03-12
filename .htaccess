@@ -4,5 +4,4 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?$1 [L]
 
-SetEnv MR_LASTMODIFIED 2019-01-01
-SetEnv MR_GA_TOKEN UA-000000000-0
+SetEnv MR_LASTMODIFIED 2019-03-12
