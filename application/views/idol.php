@@ -49,10 +49,11 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                 </tr>
                 <tr>
                     <th>なまえ</th><td colspan="3"><?= hsc(SeparateString($idol->name_y,$idol->name_y_separate)) ?></td>
-                    <th>CV</th><td><?= hsc($idol->cv) ?></td>
+                    <th>出身地</th><td><?= hsc($idol->birthplace) ?></td>
                 </tr>
                 <tr>
-                    <th>Alphabet</th><td colspan="5"><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></td>
+                    <th>Alphabet</th><td colspan="3"><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></td>
+                    <th>CV</th><td><?= hsc($idol->cv) ?></td>
                 </tr>
                 <tr>
                     <th>誕生日</th><td><?= hsc(ConvertDateString($idol->birthdate,'ja')) ?></td>
