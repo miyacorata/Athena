@@ -99,7 +99,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                             $c_cat = $tag->category;
                         }
                         $linktext = empty($tag->property) ? $tag->tagname : $tag->property."/".$tag->tagname;
-                        echo "<a href=\"javascript:void(0)\" class=\"tag\">".hsc($linktext)."</a>";
+                        echo "<a href=\"javascript:void(0)\" class=\"tag ".hsc($tag->category)."\">".hsc($linktext)."</a>";
                         //echo "<a href=\"".config_item('root_url')."search/tag/".hsc($linktext)."\" class=\"tag\">".hsc($linktext)."</a>";
                         if($tag_count == count($tags))echo "</tr>".PHP_EOL;
                     }

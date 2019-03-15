@@ -63,7 +63,9 @@
     padding: 3px 10px;
     border-radius: 3px;
     background: white;
-    border-left: solid 5px red;
+    border-left-width: 5px;
+    border-left-style: solid;
+    /*border-left-color: red;*/
     box-shadow: 0 0 4px rgba(0,0,0,0.5),inset 0 0 2px rgba(0,0,0,0.2);
 }
 .tag:hover{

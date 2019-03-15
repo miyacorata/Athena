@@ -1,0 +1,17 @@
+/* = タグ色の定義 = */
+
+.Nickname{
+    border-left-color: darkblue;
+}
+.Personality{
+    border-left-color: dimgray;
+}
+.Appearance{
+    border-left-color: skyblue;
+}
+.Favorite{
+    border-left-color: gold;
+}
+.Technical{
+    border-left-color: brown;
+}
