@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="share_to_mastodon" data-izimodal-title="mastodon・Misskeyに共有" data-izimodal-subtitle="Share to mastodon or Misskey">
         <div style="padding: 5px 10px 10px;text-align: center">
             <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
-            <input type="search" id="sm_instance" placeholder="your.mastodon.tld" style="margin: 10px auto;display: block">
+            <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block">
             <datalist id="mastodon_instance">
                 <option value="imastodon.net">
                 <option value="imastodon.blue">
