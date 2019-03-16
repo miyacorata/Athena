@@ -4,20 +4,57 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div id="modal-default">
-    <div id="ph_unsupported" data-izimodal-title="非対応ブラウザです" data-izimodal-subtitle="Share to mastodon unavailable">
-        <p style="margin: 10px 15px">お使いのブラウザはプロトコルハンドラに対応していないため、トゥートボタンをご利用いただけません。</p>
+    <div id="share_to_mastodon" data-izimodal-title="mastodon・Misskeyに共有" data-izimodal-subtitle="Share to mastodon or Misskey">
+        <div style="padding: 5px 10px 10px;text-align: center">
+            <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
+            <input type="search" id="sm_instance" placeholder="your.mastodon.tld" style="margin: 10px auto;display: block">
+            <datalist id="mastodon_instance">
+                <option value="imastodon.net">
+                <option value="imastodon.blue">
+                <option value="pawoo.net">
+                <option value="friends.nico">
+                <option value="mstdn.maud.io">
+                <option value="mstdn.jp">
+                <option value="misskey.xyz">
+                <option value="twista.283.cloud">
+                <option value="misskey.m544.net">
+            </datalist>
+            <p>または以下から選ぶことができます</p>
+            <hr>
+            <div class="buttonbox">
+                <a href="javascript:openTootWindow('imastodon.net')" class="mstdn il half">imastodon.net</a>
+                <a href="javascript:openTootWindow('imastodon.blue')" class="mstdn il half">imastodon.blue</a>
+                <a href="javascript:openTootWindow('mstdn.jp')" class="mstdn il half">mstdn.jp</a>
+                <a href="javascript:openTootWindow('mstdn.maud.io')" class="mstdn il half">mstdn.maud.io</a>
+                <a href="javascript:openTootWindow('pawoo.net')" class="mstdn il half">pawoo.net</a>
+                <a href="javascript:openTootWindow('friends.nico')" class="mstdn il half">friends.nico</a>
+                <a href="javascript:openTootWindow('misskey.xyz')" class="misskey il half">misskey.xyz</a>
+                <a href="javascript:openTootWindow('twista.283.cloud')" class="misskey il half">twista.283.cloud</a>
+                <a href="javascript:openTootWindow('misskey.m544.net')" class="misskey il half">misskey.m544.net</a>
+            </div>
+            <script>
+                var sm_instance = document.getElementById('sm_instance');
+                sm_instance.addEventListener('keydown',function(event){
+                    if(event.key === 'Enter'){
+                        openTootWindow(sm_instance.value);
+                    }
+                });
+                function openTootWindow(instance){
+                    var share_text = document.getElementById('share_buttons').getAttribute('data-share_text');
+                    window.open("https://"+instance+"/share?text="+share_text,"_blank","width=500,height=500");
+                }
+            </script>
+        </div>
+
     </div>
-    <div id="share_to_mastodon"></div>
 </div>
 <script>
-    $('#ph_unsupported').iziModal({
-        headerColor: 'darkred',
+    $('#share_to_mastodon').iziModal({
+        headerColor: '#0084d3',
         width: 520,
-        overlayColor: 'rgba(0, 0, 0, 0.5)',
+        //overlayColor: 'rgba(0, 0, 0, 0.5)',
         transitionIn: 'fadeInUp',
-        transitionOut: 'fadeOut',
-        timeout: 10000,
-        timeoutProgressbar: true
+        transitionOut: 'fadeOutDown'
     });
 </script>
 

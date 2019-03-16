@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-$share_text = "ShinyColorsPortal ".GetCurrentUrl();
+$share_text = "ShinyColorsPortal ".GetCurrentUrl()." %23283pro_net";
 if(!empty($title))$share_text = $title." - ".$share_text;
 ?>
 <!doctype html>
@@ -49,23 +49,13 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         <!-- <a href="<?= config_item('root_url') ?>search">Search</a> -->
         <!-- まだけんさくできてない ゆるして -->
     </nav>
-    <div id="share_buttons">
-        <a href="web+mastodon://share?text=<?= $share_text ?>" class="mstdn" target="_blank" id="mstdn_share">トゥート</a>
+    <div id="share_buttons" data-share_text="<?= $share_text ?>">
+        <a href="javascript:void(0)" class="mstdn" target="_blank" id="mstdn_share">Share</a>
         <script>
-            var sharebutton = document.getElementById("mstdn_share");
-            if(!navigator.registerProtocolHandler){
-                sharebutton.innerText = "非対応ブラウザです";
-                sharebutton.setAttribute('href','javascript:void(0)');
-                sharebutton.removeAttribute('target');
-                sharebutton.addEventListener('click',function(){
-                    $('#ph_unsupported').iziModal('open');
-                });
-            }else{
-                sharebutton.addEventListener('click',function(event){
-                    event.preventDefault();
-                    window.open(sharebutton.getAttribute('href'),'_blank','width=400, height=400');
-                })
-            }
+            document.getElementById('mstdn_share').addEventListener('click',function(event){
+                event.preventDefault();
+                $('#share_to_mastodon').iziModal('open');
+            })
         </script>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
