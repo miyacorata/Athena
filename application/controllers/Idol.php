@@ -38,7 +38,7 @@ class Idol extends CI_Controller {
         $this->load->model('idol_model');
         $this->load->model('unit_model');
         $this->load->model('tag_model');
-        $meta['load_css'] = array("idol","tag_color");
+        $meta['load_css'] = array("idol","tag_color","gimmick");
         $data['idol'] = $this->idol_model->get_idol($name,"roma");
         $data['tags'] = $this->tag_model->get_tags_by_idolname($data['idol']->name);
         if(empty($data['idol'])){

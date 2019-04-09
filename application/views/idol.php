@@ -41,7 +41,15 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
     <div id="upper">
         <div id="profile">
             <h2>プロフィール</h2>
-            <p><?= hsc($idol->introduction) ?></p>
+            <div id="introduction">
+                <?php $intro_flag = !empty($idol->introduction_sub);
+                if($intro_flag){
+                    echo "<p class=\"before\">".hsc($idol->introduction)."</p>".PHP_EOL;
+                    echo "<p class=\"after\">".hsc($idol->introduction_sub)."</p>";
+                }else{
+                    echo "<p>".hsc($idol->introduction)."</p>";
+                }?>
+            </div>
             <table id="profile_table">
                 <tr>
                     <th>名前</th><td colspan="3"><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></td>

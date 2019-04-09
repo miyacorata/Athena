@@ -1,0 +1,18 @@
+/* IDOL => INTRODUCTION GIMMICK */
+#introduction{
+    position: relative;
+}
+#introduction > .before{
+    position: absolute;
+    margin-top: 0;
+    background: #f1f1f1;
+    transition: opacity 1s;
+    z-index: 2;
+}
+#introduction > .before:hover{
+    opacity: 0;
+}
+#introduction > .after{
+    top: 0;
+    z-index: 1;
+}
