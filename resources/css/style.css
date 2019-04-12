@@ -37,12 +37,12 @@ header > h1{
     padding: 5px 10px 5px 25px;
     border: none;
 }
-header a:not(#share_buttons){
+header a:not([class]){
     color: rgb(0, 0, 0);
     text-decoration: none;
     transition: color 2s;
 }
-header a:not(#share_buttons):hover{
+header a:not([class]):hover{
     color: rgb(0, 31, 131);
 }
 #headmenu{
@@ -299,6 +299,27 @@ hr{
 }
 .misskey > span:before{
     content:"@";
+}
+
+/* sc */
+.sc{
+    display:inline-block;
+    background-color:whitesmoke;
+    color:black;
+    text-decoration:none;
+    padding:3px 10px 3px 30px;
+    border-radius:4px;
+    border:solid 1px #b3b3b3;
+    font-size:16px;
+    background-image: url("../image/283.png");
+    background-size:28px;
+    background-repeat:no-repeat;
+    background-position:top 50% left 1px;
+    transition:all 0.5s;
+    vertical-align: top;
+}
+.sc:hover{
+    background-color:lightgray;
 }
 
 /* ===== INPUT ===== */

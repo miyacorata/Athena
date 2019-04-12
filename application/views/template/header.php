@@ -50,6 +50,7 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         <!-- まだけんさくできてない ゆるして -->
     </nav>
     <div id="share_buttons" data-share_text="<?= $share_text ?>">
+        <a href="javascript:window.open('https://shinycolors.enza.fun','shinycolors','width=1136,height=640,scrollbars=no')" class="sc" style="vertical-align: top;">Go to Production</a>
         <a href="javascript:void(0)" class="mstdn" target="_blank" id="mstdn_share">Share</a>
         <script>
             document.getElementById('mstdn_share').addEventListener('click',function(event){
