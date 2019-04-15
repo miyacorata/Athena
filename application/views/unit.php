@@ -105,15 +105,15 @@ if($unit->name === "ALSTROEMERIA"){
                 ハッシュタグ検索<br>
                 <span class="subtext">ハッシュタグつきツイートを検索</span>
             </a>
-            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=user" class="button il trisection" target="_blank">
+            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=users" class="button il trisection" target="_blank">
                 ユーザー検索<br>
                 <span class="subtext">プロフィールからユーザーを検索</span>
             </a>
-            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=image" class="button il trisection" target="_blank">
+            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=images" class="button il trisection" target="_blank">
                 画像検索<br>
                 <span class="subtext">画像を含むツイートの検索</span>
             </a>
-            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=video" class="button il trisection" target="_blank">
+            <a href="https://twitter.com/search?q=<?= $urlname ?>&f=videos" class="button il trisection" target="_blank">
                 動画検索<br>
                 <span class="subtext">動画・動画リンクを含むツイートの検索</span>
             </a>
