@@ -35,8 +35,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </p>
     <table style="margin: 5px auto">
         <caption>管理人連絡先</caption>
-        <tr><th>宮野駅</th><td><a href="https://mstdn.miyacorata.net/@miyacorata" target="_blank">@miyacorata</a></td></tr>
-        <tr><th>im@stodon</th><td><a href="https://imastodon.net/@miyacorata" target="_blank">@miyacorata</a></td></tr>
+        <tr><th>宮野駅</th><td><a href="https://mstdn.miyacorata.net/@miyacorata" target="_blank">@miyacorata@mstdn.miyacorata.net</a></td></tr>
+        <tr><th>im@stodon</th><td><a href="https://imastodon.net/@miyacorata" target="_blank">@miyacorata@imastodon.net</a></td></tr>
+        <tr><th>twista</th><td><a href="https://twista.283.cloud/@miyacorata" target="_blank">@miyacorata@twista.283.cloud</a></td></tr>
         <tr><th>Twitter</th><td><a href="https://twitter.com/miyacorata" target="_blank">@miyacorata</a></td></tr>
         <tr><th>E-mail</th><td>miyano@miyacorata.net</td></tr>
     </table>
