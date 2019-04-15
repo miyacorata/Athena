@@ -132,10 +132,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
         <h2>Information</h2>
         <h3>MediaSearchについて</h3>
         <p>
-            MediaSearchでTwitterを検索する場合、Twitter Web Clientが新バージョンでないと正常に動作しません。
-        </p>
-        <p>
-            Twitter上のイラストを検索する場合は、外部サイト欄よりイラスト検索サービス「蒼天画廊」もおすすめします。
+            Twitter上のイラストを検索する場合は、外部サイト欄よりTwitterイラスト検索サービス「<a href="https://azure-gallery.net" target="_blank">蒼天画廊</a>」もおすすめします。
         </p>
         <h3>データ情報</h3>
         <p>
@@ -144,6 +141,30 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
     </div>
     <div id="mainbar">
         <h2>MediaSearch</h2>
+        <h3>niconico</h3>
+        <div class="buttonbox">
+            <a href="https://www.nicovideo.jp/tag/<?= $urlname ?>" class="button il trisection" target="_blank">
+                動画をタグ検索<br>
+            </a>
+            <a href="https://www.nicovideo.jp/search/<?= $urlname ?>" class="button il trisection" target="_blank">
+                動画をキーワード検索<br>
+            </a>
+            <a href="https://seiga.nicovideo.jp/tag/<?= $urlname ?>" class="button il trisection" target="_blank">
+                静画をタグ検索<br>
+            </a>
+        </div>
+        <h3>pixiv</h3>
+        <div class="buttonbox">
+            <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word=<?= $urlname ?>" class="button il trisection" target="_blank">
+                イラストをタグ検索
+            </a>
+            <a href="https://www.pixiv.net/novel/search.php?s_mode=s_tag&word=<?= $urlname ?>" class="button il trisection" target="_blank">
+                小説をキーワード検索
+            </a>
+            <a href="https://www.pixiv.net/novel/tags.php?tag=<?= $urlname ?>" class="button il trisection" target="_blank">
+                小説をタグ検索
+            </a>
+        </div>
         <h3>Twitter</h3>
         <div class="buttonbox">
             <a href="https://twitter.com/search?vertical=default&q=<?= $urlname ?>" class="button il trisection" target="_blank">
@@ -169,30 +190,6 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
             <a href="https://twitter.com/search?q=<?= $urlname ?>%20⚡" class="button il trisection" target="_blank">
                 モーメント検索<br>
                 <span class="subtext">モーメントを含む(と思われる)ツイートの検索</span>
-            </a>
-        </div>
-        <h3>niconico</h3>
-        <div class="buttonbox">
-            <a href="https://www.nicovideo.jp/tag/<?= $urlname ?>" class="button il trisection" target="_blank">
-                動画をタグ検索<br>
-            </a>
-            <a href="https://www.nicovideo.jp/search/<?= $urlname ?>" class="button il trisection" target="_blank">
-                動画をキーワード検索<br>
-            </a>
-            <a href="https://seiga.nicovideo.jp/tag/<?= $urlname ?>" class="button il trisection" target="_blank">
-                静画をタグ検索<br>
-            </a>
-        </div>
-        <h3>pixiv</h3>
-        <div class="buttonbox">
-            <a href="https://www.pixiv.net/search.php?s_mode=s_tag_full&word=<?= $urlname ?>" class="button il trisection" target="_blank">
-                イラストをタグ検索
-            </a>
-            <a href="https://www.pixiv.net/novel/search.php?s_mode=s_tag&word=<?= $urlname ?>" class="button il trisection" target="_blank">
-                小説をキーワード検索
-            </a>
-            <a href="https://www.pixiv.net/novel/tags.php?tag=<?= $urlname ?>" class="button il trisection" target="_blank">
-                小説をタグ検索
             </a>
         </div>
         <h3>Fediverse</h3>
