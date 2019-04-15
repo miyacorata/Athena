@@ -4,7 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 <div id="modal-default">
-    <div id="share_to_mastodon" data-izimodal-title="mastodon・Misskeyに共有" data-izimodal-subtitle="Share to mastodon or Misskey">
+    <div id="share_to_mastodon" data-izimodal-title="Fediverseへ共有" data-izimodal-subtitle="Share to Fediverse such as mastodon and Misskey">
         <div style="padding: 5px 10px 10px;text-align: center">
             <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
             <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block">
@@ -50,7 +50,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 </div>
 <script>
     $('#share_to_mastodon').iziModal({
-        headerColor: '#0084d3',
+        headerColor: '#fe8200',
         width: 520,
         //overlayColor: 'rgba(0, 0, 0, 0.5)',
         transitionIn: 'fadeInUp',
@@ -73,6 +73,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="<?= config_item('root_url') ?>info/privacy">プライバシーポリシー</a>
             <a href="https://mstdn.miyacorata.net/@283pro" rel="me" target="_blank">Mastodon:@283pro</a>
             <a href="https://github.com/project-tsubasa/athena" target="_blank">GitHub</a>
+            <a href="https://github.com/project-tsubasa/athena/issues" target="_blank">Feedback</a>
         </div>
     </div>
 </footer>
