@@ -48,6 +48,7 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         <a href="<?= config_item('root_url') ?>unit">Unit</a>
         <!-- <a href="<?= config_item('root_url') ?>search">Search</a> -->
         <!-- まだけんさくできてない ゆるして -->
+        <a href="<?= config_item('root_url') ?>mypage">Mypage</a>
     </nav>
     <div id="share_buttons" data-share_text="<?= $share_text ?>">
         <a href="javascript:window.open('https://shinycolors.enza.fun','shinycolors','width=1136,height=640,scrollbars=no')" class="sc" style="vertical-align: top;">Go to Production</a>
