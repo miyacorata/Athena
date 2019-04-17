@@ -29,7 +29,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="javascript:openTootWindow('pawoo.net')" class="mstdn il half">pawoo.net</a>
                 <a href="javascript:openTootWindow('friends.nico')" class="mstdn il half">friends.nico</a>
                 <a href="javascript:openTootWindow('misskey.xyz')" class="misskey il half">misskey.xyz</a>
-                <a href="javascript:openTootWindow('twista.283.cloud')" class="misskey il half">twista.283.cloud</a>
+                <a href="javascript:openTootWindow('twista.283.cloud')" class="twista il half">twista.283.cloud</a>
                 <a href="javascript:openTootWindow('misskey.m544.net')" class="misskey il half">misskey.m544.net</a>
             </div>
             <script>
