@@ -11,3 +11,31 @@
     text-align: center;
 }
 
+img.usericon{
+    margin-right: 10px;
+    float: left;
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.4);
+}
+
+#profile_main{
+    padding: 10px;
+    min-height: 80px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 5px;
+}
+#profile_main > h3{
+    margin: 0 0 10px 90px;
+    font-weight: normal;
+}
+
+.acct{
+    color: gray;
+    text-decoration: none;
+}
+
+.half{
+    width: 45%;
+}
