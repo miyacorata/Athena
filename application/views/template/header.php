@@ -71,3 +71,11 @@ if(ENVIRONMENT === "development"){
     </p>
     <?php
 }
+
+if(date("md")==="0424"){
+    ?>
+    <p style="margin: 0;padding: 7px;background: linear-gradient(deeppink,orange);color: white;text-align: center;text-shadow: 0 0 4px rgba(0,0,0,0.7);">
+        THE IDOLM@STER SHINYCOLORS 1st anniversary!
+    </p>
+    <?php
+}
