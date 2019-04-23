@@ -7,7 +7,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <div id="share_to_mastodon" data-izimodal-title="Fediverseへ共有" data-izimodal-subtitle="Share to Fediverse such as mastodon and Misskey">
         <div style="padding: 5px 10px 10px;text-align: center">
             <p style="margin: 10px 15px;">共有するインスタンスのホストを入力してください</p>
-            <input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block">
+            <label for="sm_instance"></label><input type="search" id="sm_instance" placeholder="your.instance.tld" style="margin: 10px auto;display: block">
             <datalist id="mastodon_instance">
                 <option value="imastodon.net">
                 <option value="imastodon.blue">
@@ -74,6 +74,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <a href="https://mstdn.miyacorata.net/@283pro" rel="me" target="_blank">Mastodon:@283pro</a>
             <a href="https://github.com/project-tsubasa/athena" target="_blank">GitHub</a>
             <a href="https://github.com/project-tsubasa/athena/issues" target="_blank">Feedback</a>
+            <?php if(!empty($_SESSION['user']))echo "ログイン中：お疲れ様です、".html_escape($_SESSION['user']['name'])."さん" ?>
         </div>
     </div>
 </footer>

@@ -8,15 +8,24 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  * @property Unit_model $unit_model
  * @property Tag_model $tag_model
  * @property CI_Input $input
+ * @property CI_Session $session
  */
 class Mypage extends CI_Controller {
 
     public function index()
     {
-        $meta['load_css'] = array('mypage');
+        $meta['load_css'] = array('mypage','idollist');
         $meta['title'] = "マイページ";
+        $this->load->model('idol_model');
+        $this->load->model('unit_model');
+        $data['units'] = $this->unit_model->get_all_unit();
+        if(!empty($_SESSION['user']['tags']) && empty($_SESSION['producer']['tantou'])){
+            foreach ($_SESSION['user']['tags'] as $tag) {
+                if ($tagidol = $this->idol_model->get_idol($tag, "kan")) $_SESSION['producer']['tantou'][] = $tagidol;
+            }
+        }
         $this->load->view('template/header',$meta);
-        $this->load->view('mypage');
+        $this->load->view('mypage',$data);
         $this->load->view('template/footer');
     }
 
@@ -61,11 +70,10 @@ class Mypage extends CI_Controller {
     }
 
     public function logout(){
-        unset(
-            $_SESSION['user_type'],
-            $_SESSION['access_token'],
-            $_SESSION['user']
-        );
+        $_SESSION = array();
+        session_regenerate_id();
+        $_SESSION['message'] = "logout";
+        $this->session->mark_as_flash("message");
         header("Location: ".config_item('root_url')."mypage");
     }
 }
