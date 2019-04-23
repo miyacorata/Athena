@@ -44,6 +44,7 @@ switch ($code){
         <a href="<?= config_item('root_url') ?>">Home</a>
         <a href="<?= config_item('root_url') ?>idol">Idol</a>
         <a href="<?= config_item('root_url') ?>unit">Unit</a>
+        <a href="<?= config_item('root_url') ?>mypage">Mypage</a>
     </nav>
 </header>
 
