@@ -14,9 +14,9 @@
     overflow: hidden;
 }
 #tachie > img{
-    margin: 0 -10vw;
+    margin: 0;
     height: 50vh;
-    width: 120vw;
+    width: 100%;
     object-fit: contain;
 }
 #profile{
