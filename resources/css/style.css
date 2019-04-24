@@ -71,6 +71,10 @@ header a:not([class]):hover{
     vertical-align: top;
 }
 
+#menucheck,#menutoggle{
+    display: none;
+}
+
 /* ===== FOOTER ===== */
 footer{
     position: absolute;

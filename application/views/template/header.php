@@ -27,7 +27,7 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         foreach ($load_css as $css){
             $css_m = config_item('resource_root')."css/mobile/".$css.".css";
             $css = config_item('resource_root')."css/".$css.".css";
-            echo "<link rel='stylesheet' href='{$css}'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}'>".PHP_EOL;
+            echo "<link rel='stylesheet' href='{$css}' media='screen'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1200px)'>".PHP_EOL;
         }
     } ?>
     <script
@@ -43,6 +43,10 @@ if(!empty($title))$share_text = $title." - ".$share_text;
 <header>
     <h1><a href="<?= config_item('root_url') ?>" id="sitename">ShinyColorsPortal</a></h1>
     <span id="version"><?= config_item('system_name')." ".config_item('system_version') ?></span>
+    <input type="checkbox" id="menucheck" name="nav">
+    <label for="menucheck" id="menutoggle">
+        Menu
+    </label>
     <nav id="headmenu">
         <a href="<?= config_item('root_url') ?>">Home</a>
         <a href="<?= config_item('root_url') ?>idol">Idol</a>

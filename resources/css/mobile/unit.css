@@ -1,0 +1,19 @@
+#unitlogo{
+    display: none;
+}
+#unitdata{
+    float: none;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+img#unitimage{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+    box-sizing: border-box;
+}
+.member{
+    width: 30%;
+}
