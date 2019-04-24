@@ -20,12 +20,19 @@ if(!empty($title))$share_text = $title." - ".$share_text;
     <?php } ?>
     <title><?php if(!empty($title))echo $title." - "; ?>ShinyColorsPortal</title>
     <meta charset="utf8">
-    <meta name="viewport" content="width=1360, maximum-scale=3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
     <link rel="stylesheet" href="<?= config_item('resource_root') ?>css/style.css">
+    <link rel="stylesheet" href="<?= config_item('resource_root') ?>css/mobile/style.css" media="screen and (max-width:1200px)">
     <?php if(!empty($load_css) && is_array($load_css)){
         foreach ($load_css as $css){
             $css = config_item('resource_root')."css/".$css.".css";
             echo "<link rel='stylesheet' href='{$css}'>".PHP_EOL;
+        }
+    }
+    if(!empty($load_css_mobile) && is_array($load_css_mobile)){
+        foreach ($load_css_mobile as $css_m){
+            $css_m = config_item('resource_root')."css/mobile/".$css_m.".css";
+            echo "<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1200px)'>".PHP_EOL;
         }
     }
     ?>

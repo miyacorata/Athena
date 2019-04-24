@@ -30,6 +30,7 @@ class Info extends CI_Controller {
 	    $data['birthday'] = $this->idol_model->get_birthday_idol();
 	    $data['units'] = $this->unit_model->get_all_unit();
 	    $meta['load_css'] = array('top','idollist');
+	    $meta['load_css_mobile'] = array('top');
 	    $this->load->view('template/header',$meta);
 		$this->load->view('welcome_message',$data);
 		$this->load->view('template/footer');
