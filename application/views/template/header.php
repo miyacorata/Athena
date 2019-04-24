@@ -25,17 +25,11 @@ if(!empty($title))$share_text = $title." - ".$share_text;
     <link rel="stylesheet" href="<?= config_item('resource_root') ?>css/mobile/style.css" media="screen and (max-width:1200px)">
     <?php if(!empty($load_css) && is_array($load_css)){
         foreach ($load_css as $css){
+            $css_m = config_item('resource_root')."css/mobile/".$css.".css";
             $css = config_item('resource_root')."css/".$css.".css";
-            echo "<link rel='stylesheet' href='{$css}'>".PHP_EOL;
+            echo "<link rel='stylesheet' href='{$css}'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}'>".PHP_EOL;
         }
-    }
-    if(!empty($load_css_mobile) && is_array($load_css_mobile)){
-        foreach ($load_css_mobile as $css_m){
-            $css_m = config_item('resource_root')."css/mobile/".$css_m.".css";
-            echo "<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1200px)'>".PHP_EOL;
-        }
-    }
-    ?>
+    } ?>
     <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
