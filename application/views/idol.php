@@ -4,9 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if(empty($idol)){
     show_error("Required data 'idol' is not declared.");
 }
-if(empty($unit)){
-    show_error("Required data 'unit' is not declared.");
-}
 
 $urlname = urlencode($idol->name);
 //$protocol = !empty($_SERVER['HTTPS']) ? 'https://' : 'http://';
@@ -14,7 +11,7 @@ $urlname = urlencode($idol->name);
 $share_url = $urlname." ShinyColorsPortal - ".GetCurrentUrl();
 
 $fhme_linknames = explode(" ",SeparateString($idol->name_r,$idol->name_r_separate));
-$fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
+$fhme_linkname = $idol->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
 ?>
 <style>
     .half{
@@ -31,7 +28,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
     <h1><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></h1>
     <p><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></p>
     <div id="unitlogo">
-        <img src="<?= config_item('resource_root') ?>image/unitlogo/<?= hsc($unit->slug) ?>.png" alt="UnitLogo">
+        <img src="<?= config_item('resource_root') ?>image/unitlogo/<?= hsc($idol->slug) ?>.png" alt="UnitLogo">
     </div>
 
 </div>
@@ -54,7 +51,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                 <table>
                     <tr>
                         <th>名前</th><td colspan="3"><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></td>
-                        <th>ユニット</th><td><a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($unit->slug) ?>"><?= hsc($unit->name) ?></a></td>
+                        <th>ユニット</th><td><a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($idol->slug) ?>"><?= hsc($idol->unit_name) ?></a></td>
                     </tr>
                     <tr>
                         <th>なまえ</th><td colspan="3"><?= hsc(SeparateString($idol->name_y,$idol->name_y_separate)) ?></td>
