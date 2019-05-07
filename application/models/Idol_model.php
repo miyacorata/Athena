@@ -42,7 +42,7 @@ class Idol_model extends CI_Model{
         $col = "`".$col."`";
         $sql = "SELECT idol.id, idol.name, idol.name_y, name_r, name_separate, name_y_separate, name_r_separate, unit_id, age, height, weight, bust, weist, hip, birthdate, birthplace, constellation, bloodtype, cv, skill, hobby, introduction, introduction_sub,
                 unit.id as unit_id, unit.name as unit_name, unit.name_y as unit_name_y, slug, slug_fhme, catchcopy, description 
-                FROM mrapid_scp.idol INNER JOIN unit ON idol.unit_id = unit.id WHERE ".$col." LIKE ? ";
+                FROM mrapid_scp.idol INNER JOIN unit ON idol.unit_id = unit.id WHERE idol.".$col." LIKE ? ";
         $query = $this->db->query($sql,$name);
         $result = $query->row();
         if(empty($result)){
