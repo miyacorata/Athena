@@ -183,7 +183,7 @@ $assign_to_config['root_url'] = "/";
 $assign_to_config['resource_root'] = $assign_to_config['root_url']."resources/";
 
 $assign_to_config['system_name'] = "Athena";
-$assign_to_config['system_version'] = "Ver* Branch mypage";
+$assign_to_config['system_version'] = "Ver3.1.2 Shimo-takaido";
 $assign_to_config['ga_token'] = isset($_SERVER['MR_GA_TOKEN']) ? $_SERVER['MR_GA_TOKEN'] : false;
 $assign_to_config['db_last_modified'] = isset($_SERVER['MR_LASTMODIFIED']) ? $_SERVER['MR_LASTMODIFIED'] : "";
 

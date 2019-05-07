@@ -1,0 +1,34 @@
+#unitlogo{
+    display: none;
+}
+#upper{
+    position: relative;
+    height: auto;
+}
+#tachie{
+    position: absolute;
+    top: 0;
+    height: 50vh;
+    width: 100%;
+    margin: 0;
+    overflow: hidden;
+}
+#tachie > img{
+    margin: 0;
+    height: 50vh;
+    width: 100%;
+    object-fit: contain;
+}
+#profile{
+    width: 100%;
+    float: none;
+    margin: 0;
+    padding: 50vh 0 0;
+}
+#profile_table{
+    width: 100%;
+    overflow-x: scroll;
+}
+#profile_table > table{
+    width: 600px;
+}

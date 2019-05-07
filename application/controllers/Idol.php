@@ -44,7 +44,6 @@ class Idol extends CI_Controller {
         if(empty($data['idol'])){
             show_error("URL等に誤りがないか確認の上、もう一度お試しください。リンク切れ等の場合は管理者までご連絡ください。",404,"該当するアイドルが見つかりませんでした");
         }
-        $data['unit'] = $this->unit_model->get_unit($data['idol']->unit_id);
         $meta['title'] = hsc($data['idol']->name);
 
         $this->load->view('template/header',$meta);

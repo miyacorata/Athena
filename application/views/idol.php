@@ -4,9 +4,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 if(empty($idol)){
     show_error("Required data 'idol' is not declared.");
 }
-if(empty($unit)){
-    show_error("Required data 'unit' is not declared.");
-}
 
 $urlname = urlencode($idol->name);
 //$protocol = !empty($_SERVER['HTTPS']) ? 'https://' : 'http://';
@@ -14,7 +11,7 @@ $urlname = urlencode($idol->name);
 $share_url = $urlname." ShinyColorsPortal - ".GetCurrentUrl();
 
 $fhme_linknames = explode(" ",SeparateString($idol->name_r,$idol->name_r_separate));
-$fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
+$fhme_linkname = $idol->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
 ?>
 <style>
     .half{
@@ -31,7 +28,7 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
     <h1><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></h1>
     <p><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></p>
     <div id="unitlogo">
-        <img src="<?= config_item('resource_root') ?>image/unitlogo/<?= hsc($unit->slug) ?>.png" alt="UnitLogo">
+        <img src="<?= config_item('resource_root') ?>image/unitlogo/<?= hsc($idol->slug) ?>.png" alt="UnitLogo">
     </div>
 
 </div>
@@ -50,36 +47,39 @@ $fhme_linkname = $unit->slug_fhme."/".$fhme_linknames[1]."-".$fhme_linknames[0];
                     echo "<p>".hsc($idol->introduction)."</p>";
                 }?>
             </div>
-            <table id="profile_table">
-                <tr>
-                    <th>名前</th><td colspan="3"><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></td>
-                    <th>ユニット</th><td><a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($unit->slug) ?>"><?= hsc($unit->name) ?></a></td>
-                </tr>
-                <tr>
-                    <th>なまえ</th><td colspan="3"><?= hsc(SeparateString($idol->name_y,$idol->name_y_separate)) ?></td>
-                    <th>出身地</th><td><?= hsc($idol->birthplace) ?></td>
-                </tr>
-                <tr>
-                    <th>Alphabet</th><td colspan="3"><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></td>
-                    <th>CV</th><td><?= hsc($idol->cv) ?></td>
-                </tr>
-                <tr>
-                    <th>誕生日</th><td><?= hsc(ConvertDateString($idol->birthdate,'ja')) ?></td>
-                    <th>年齢</th><td><?= hsc($idol->age) ?>歳</td>
-                    <th>星座</th><td><?= hsc($idol->constellation) ?></td>
-                </tr>
-                <tr>
-                    <th>身長</th><td><?= hsc($idol->height) ?>cm</td>
-                    <th>体重</th><td><?= hsc($idol->weight) ?>kg</td>
-                    <th>3サイズ</th><td><?= hsc($idol->bust)."/".hsc($idol->weist)."/".hsc($idol->hip) ?></td>
-                </tr>
-                <tr>
-                    <th>特技</th><td colspan="5"><?= empty($idol->skill) ? "<i>N/A</i>" : hsc($idol->skill) ?></td>
-                </tr>
-                <tr>
-                    <th>趣味</th><td colspan="5"><?= empty($idol->hobby) ? "<i>N/A</i>" : hsc($idol->hobby) ?></td>
-                </tr>
-            </table>
+            <div id="profile_table">
+                <table>
+                    <tr>
+                        <th>名前</th><td colspan="3"><?= hsc(SeparateString($idol->name,$idol->name_separate)) ?></td>
+                        <th>ユニット</th><td><a href="<?= config_item('root_url') ?>unit/detail/<?= hsc($idol->slug) ?>"><?= hsc($idol->unit_name) ?></a></td>
+                    </tr>
+                    <tr>
+                        <th>なまえ</th><td colspan="3"><?= hsc(SeparateString($idol->name_y,$idol->name_y_separate)) ?></td>
+                        <th>出身地</th><td><?= hsc($idol->birthplace) ?></td>
+                    </tr>
+                    <tr>
+                        <th>Alphabet</th><td colspan="3"><?= hsc(ucwords(SeparateString($idol->name_r,$idol->name_r_separate))); ?></td>
+                        <th>CV</th><td><?= hsc($idol->cv) ?></td>
+                    </tr>
+                    <tr>
+                        <th>誕生日</th><td><?= hsc(ConvertDateString($idol->birthdate,'ja')) ?></td>
+                        <th>年齢</th><td><?= hsc($idol->age) ?>歳</td>
+                        <th>星座</th><td><?= hsc($idol->constellation) ?></td>
+                    </tr>
+                    <tr>
+                        <th>身長</th><td><?= hsc($idol->height) ?>cm</td>
+                        <th>体重</th><td><?= hsc($idol->weight) ?>kg</td>
+                        <th>3サイズ</th><td><?= hsc($idol->bust)."/".hsc($idol->weist)."/".hsc($idol->hip) ?></td>
+                    </tr>
+                    <tr>
+                        <th>特技</th><td colspan="5"><?= empty($idol->skill) ? "<i>N/A</i>" : hsc($idol->skill) ?></td>
+                    </tr>
+                    <tr>
+                        <th>趣味</th><td colspan="5"><?= empty($idol->hobby) ? "<i>N/A</i>" : hsc($idol->hobby) ?></td>
+                    </tr>
+                </table>
+            </div>
+
             <h3>百科事典・外部サイト</h3>
             <div class="buttonbox" style="width: 100%">
                 <a href="https://dic.nicovideo.jp/a/<?= $urlname ?>" class="button il half" target="_blank">

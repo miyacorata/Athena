@@ -40,14 +40,16 @@ class Idol_model extends CI_Model{
                 exit();
         }
         $col = "`".$col."`";
-        $query = $this->db->query('SELECT * FROM mrapid_scp.idol WHERE '.$col.' LIKE '.$this->db->escape($name).' LIMIT 1');
+        $sql = "SELECT idol.id, idol.name, idol.name_y, name_r, name_separate, name_y_separate, name_r_separate, unit_id, age, height, weight, bust, weist, hip, birthdate, birthplace, constellation, bloodtype, cv, skill, hobby, introduction, introduction_sub,
+                unit.id as unit_id, unit.name as unit_name, unit.name_y as unit_name_y, slug, slug_fhme, catchcopy, description 
+                FROM mrapid_scp.idol INNER JOIN unit ON idol.unit_id = unit.id WHERE idol.".$col." LIKE ? ";
+        $query = $this->db->query($sql,$name);
         $result = $query->row();
         if(empty($result)){
             return null;
         }else{
             return $result;
         }
-        //return 'SELECT * FROM mrapid_scp.idol WHERE '.$this->db->escape($col).' LIKE '.$this->db->escape($name);
     }
 
     public function get_idol_by_unit_id($id){

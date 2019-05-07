@@ -20,15 +20,16 @@ if(!empty($title))$share_text = $title." - ".$share_text;
     <?php } ?>
     <title><?php if(!empty($title))echo $title." - "; ?>ShinyColorsPortal</title>
     <meta charset="utf8">
-    <meta name="viewport" content="width=1360, maximum-scale=3">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3">
     <link rel="stylesheet" href="<?= config_item('resource_root') ?>css/style.css">
+    <link rel="stylesheet" href="<?= config_item('resource_root') ?>css/mobile/style.css" media="screen and (max-width:1200px)">
     <?php if(!empty($load_css) && is_array($load_css)){
         foreach ($load_css as $css){
+            $css_m = config_item('resource_root')."css/mobile/".$css.".css";
             $css = config_item('resource_root')."css/".$css.".css";
-            echo "<link rel='stylesheet' href='{$css}'>".PHP_EOL;
+            echo "<link rel='stylesheet' href='{$css}' media='screen'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1200px)'>".PHP_EOL;
         }
-    }
-    ?>
+    } ?>
     <script
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
             integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
@@ -42,6 +43,10 @@ if(!empty($title))$share_text = $title." - ".$share_text;
 <header>
     <h1><a href="<?= config_item('root_url') ?>" id="sitename">ShinyColorsPortal</a></h1>
     <span id="version"><?= config_item('system_name')." ".config_item('system_version') ?></span>
+    <input type="checkbox" id="menucheck" name="nav">
+    <label for="menucheck" id="menutoggle">
+        Menu
+    </label>
     <nav id="headmenu">
         <a href="<?= config_item('root_url') ?>">Home</a>
         <a href="<?= config_item('root_url') ?>idol">Idol</a>
@@ -68,6 +73,14 @@ if(ENVIRONMENT === "development"){
     ?>
     <p style="margin: 0;padding: 7px;background: orange;text-align: center">
         DEVELOPMENT環境で動作中
+    </p>
+    <?php
+}
+
+if(date("md")==="0424"){
+    ?>
+    <p style="margin: 0;padding: 7px;background: linear-gradient(deeppink,orange);color: white;text-align: center;text-shadow: 0 0 4px rgba(0,0,0,0.7);">
+        THE IDOLM@STER SHINYCOLORS 1st anniversary!
     </p>
     <?php
 }
