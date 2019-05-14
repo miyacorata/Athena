@@ -17,14 +17,7 @@ class Mypage extends CI_Controller {
     {
         $meta['load_css'] = array('mypage','idollist');
         $meta['title'] = "マイページ";
-        $this->load->model('idol_model');
         $this->load->model('unit_model');
-        //$data['units'] = $this->unit_model->get_all_unit();
-        if(!empty($_SESSION['user']['tags']) && empty($_SESSION['producer']['tantou'])){
-            foreach ($_SESSION['user']['tags'] as $tag) {
-                if ($tagidol = $this->idol_model->get_idol($tag, "kan")) $_SESSION['producer']['tantou'][] = $tagidol;
-            }
-        }
         $this->load->view('template/header',$meta);
         if(empty($_SESSION['user']))$this->load->view('login');
         else $this->load->view('mypage');
@@ -61,12 +54,15 @@ class Mypage extends CI_Controller {
 
             $res = Post($url, $data);
 
+            if(empty($res['user'])){
+                $reason = "不正なログインです";
+                if(!empty($res['error']['code'])) $reason .= " : ".$res['error']['code'];
+                show_error($reason,403);
+            }
+
             // ユーザーの確認
             if($user = $this->user_model->get_user($res['user']['username'],"twista.283.cloud")){
-                $_SESSION['user_type'] = "twista";
                 $_SESSION['user'] = $user;
-                $_SESSION['user']['type'] = "twista";
-                $_SESSION['user']['avatarUrl'] = $res['user']['avatarUrl'];
             }else{
                 $user = array(
                     "name" => $res['user']['name'],
@@ -76,11 +72,19 @@ class Mypage extends CI_Controller {
                     "notice" => null
                 );
                 $_SESSION['user'] = $user;
-                $_SESSION['user']['avatarUrl'] = $res['user']['avatarUrl'];
                 $this->user_model->add_user($user);
                 $_SESSION['message'] = "firstlogin";
                 $this->session->mark_as_flash("message");
             }
+            $_SESSION['user']['type'] = "twista";
+            $_SESSION['user']['avatarUrl'] = $res['user']['avatarUrl'];
+            if(!empty($res['user']['tags']) && empty($_SESSION['producer']['tantou'])){
+                $this->load->model('idol_model');
+                foreach ($res['user']['tags'] as $tag) {
+                    if ($tagidol = $this->idol_model->get_idol($tag, "kan")) $_SESSION['producer']['tantou'][] = $tagidol;
+                }
+            }
+
 
             header("Location: ".config_item('root_url')."mypage");
         }
