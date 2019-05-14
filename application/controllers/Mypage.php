@@ -18,14 +18,15 @@ class Mypage extends CI_Controller {
         $meta['title'] = "マイページ";
         $this->load->model('idol_model');
         $this->load->model('unit_model');
-        $data['units'] = $this->unit_model->get_all_unit();
+        //$data['units'] = $this->unit_model->get_all_unit();
         if(!empty($_SESSION['user']['tags']) && empty($_SESSION['producer']['tantou'])){
             foreach ($_SESSION['user']['tags'] as $tag) {
                 if ($tagidol = $this->idol_model->get_idol($tag, "kan")) $_SESSION['producer']['tantou'][] = $tagidol;
             }
         }
         $this->load->view('template/header',$meta);
-        $this->load->view('mypage',$data);
+        if(empty($_SESSION['user']))$this->load->view('login');
+        else $this->load->view('mypage');
         $this->load->view('template/footer');
     }
 
