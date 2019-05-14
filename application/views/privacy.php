@@ -52,6 +52,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p>
         我々はアクセス解析で得られたデータを用いて、皆さんにより良いサービスを提供するための資料として活用します。
     </p>
+    <h3>twista ユーザー情報</h3>
+    <p>
+        当サイトは<a href="<?= hsc(config_item('twista_url')) ?>" target="_blank">twista</a>のアカウントを利用したマイページ機能を提供しています。
+    </p>
+    <p>
+        ログインされる際、当サイトはtwistaのAPIを経由してあなたの名前、アイコンのURLなどの情報を取得します。
+        これらの情報は利用者の識別によりサービスを適切に運用するために利用します。
+    </p>
     <hr>
     <h2>情報の共有</h2>
     <p>
@@ -83,6 +91,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </p>
     <h3>改訂履歴</h3>
     <ul>
+        <li>2019-05/14 - twistaアカウントに関する記述を追加</li>
         <li>2019-01/28 - 制定</li>
     </ul>
 </main>
