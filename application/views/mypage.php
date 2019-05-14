@@ -6,7 +6,7 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
 <div id="pagetitle">
     <img src="<?= $icon ?>" alt="">
     <h1>マイページ</h1>
-    <p><?php if(empty($_SESSION['user']['username']))echo "Mypage";
+    <p><?php if(empty($_SESSION['user']['name']))echo "Mypage";
     else echo "お疲れ様です、".html_escape($_SESSION['user']['name'])."さん" ?></p>
 </div>
 <main>
@@ -15,7 +15,7 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
         <div id="profile_main">
             <img src="<?= $icon ?>" class="usericon" alt="icon">
             <h3><?= html_escape($_SESSION['user']['name']) ?></h3>
-            <a href="<?= config_item('twista_url')."/@".html_escape($_SESSION['user']['username']) ?>" class="twista" target="_blank"><?= html_escape($_SESSION['user']['username']) ?></a>
+            <a href="<?= config_item('twista_url')."/@".html_escape($_SESSION['user']['screenname']) ?>" class="twista" target="_blank"><?= html_escape($_SESSION['user']['screenname']) ?></a>
         </div>
         <hr style="margin: 15px 0 10px">
         <div class="buttonbox">
@@ -60,8 +60,8 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
 </main>
 
 <script>
-    <?php if(!empty($_SESSION['message']) && $_SESSION['message'] === "logout"){ ?>
-    $('<div>またのご利用をお待ちしております。</div>').iziModal({
+    <?php if(!empty($_SESSION['message']) && $_SESSION['message'] === "firstlogin"){ ?>
+    $('<div>ユーザー登録を完了しました</div>').iziModal({
         headerColor: '#ae0000',
         width: 520,
         transitionIn: 'fadeInUp',

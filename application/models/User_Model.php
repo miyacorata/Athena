@@ -13,8 +13,8 @@ class User_Model extends CI_Model{
     public function get_user($screenname,$instance){
         $screenname = $this->db->escape_str($screenname);
         $instance = $this->db->escape_str($instance);
-        $sql = "SELECT * FROM user WHERE screenname LIKE {$screenname} AND instance LIKE {$instance} LIMIT 1";
-        $result = $this->db->query($sql)->row();
+        $sql = "SELECT * FROM user WHERE screenname LIKE ? AND instance LIKE ? LIMIT 1";
+        $result = $this->db->query($sql,array($screenname,$instance))->row_array();
         if(empty($result))return null;
         else return $result;
     }
