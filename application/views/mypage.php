@@ -61,13 +61,13 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
 
 <script>
     <?php if(!empty($_SESSION['message']) && $_SESSION['message'] === "firstlogin"){ ?>
-    $('<div>ユーザー登録を完了しました</div>').iziModal({
-        headerColor: '#ae0000',
+    $('<div>ユーザー登録を完了しました！<br>ShinyColorsPortalをご利用いただきありがとうございます。</div>').iziModal({
+        headerColor: '#0058ae',
         width: 520,
         transitionIn: 'fadeInUp',
         transitionOut: 'fadeOut',
-        title: 'ログアウトしました',
-        subtitle: 'Logged out.',
+        title: '登録完了',
+        subtitle: 'User registration completed!',
         timeout: 3000,
         autoOpen: 1,
         padding: 15
