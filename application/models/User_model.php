@@ -4,7 +4,7 @@
  * Class Idol_model
  * @property CI_DB_mysqli_driver $db
  */
-class User_Model extends CI_Model{
+class User_model extends CI_Model{
     public function __construct(){
         parent::__construct();
         $this->load->database();
