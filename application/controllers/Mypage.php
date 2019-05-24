@@ -20,7 +20,7 @@ class Mypage extends CI_Controller {
         $this->load->model('unit_model');
         $this->load->view('template/header',$meta);
         if(empty($_SESSION['user']))$this->load->view('login');
-        else $this->load->view('mypage');
+        else $this->load->view('mypage/home');
         $this->load->view('template/footer');
     }
 
@@ -99,5 +99,14 @@ class Mypage extends CI_Controller {
         $_SESSION['message'] = "logout";
         $this->session->mark_as_flash("message");
         header("Location: ".config_item('root_url')."mypage");
+    }
+
+    public function settings(){
+        $meta['load_css'] = array('mypage','idollist');
+        $meta['title'] = "個人設定";
+        $this->load->view('template/header',$meta);
+        if(empty($_SESSION['user']))show_error('ログインが必要です',403);
+        else $this->load->view('mypage/settings');
+        $this->load->view('template/footer');
     }
 }

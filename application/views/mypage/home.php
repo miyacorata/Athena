@@ -19,6 +19,7 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
         </div>
         <hr style="margin: 15px 0 10px">
         <div class="buttonbox">
+            <a href="<?= config_item('root_url') ?>mypage/settings" class="button half il">個人設定</a>
             <a href="<?= config_item('root_url') ?>mypage/logout" class="button half il">ログアウト</a>
         </div>
     </div>
