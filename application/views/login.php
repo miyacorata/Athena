@@ -14,7 +14,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <p class="notification">
             twista はシャニマスP&ファン向けのオープンな SNS です。
         </p>
-        <a href="<?= config_item('root_url') ?>mypage/login/twista" class="twista" style="margin:7px">Login with Twista ID</a>
+        <a href="<?= config_item('root_url') ?>mypage/login/twista" class="twista" style="margin:7px">Login with twista ID</a>
     </div>
 </main>
 
