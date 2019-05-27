@@ -12,11 +12,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <option value="imastodon.net">
                 <option value="imastodon.blue">
                 <option value="pawoo.net">
-                <option value="friends.nico">
                 <option value="mstdn.maud.io">
                 <option value="mstdn.jp">
-                <option value="misskey.xyz">
                 <option value="twista.283.cloud">
+                <option value="misskey.io">
                 <option value="misskey.m544.net">
             </datalist>
             <p>または以下から選ぶことができます</p>
@@ -27,9 +26,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <a href="javascript:openTootWindow('mstdn.jp')" class="mstdn il half">mstdn.jp</a>
                 <a href="javascript:openTootWindow('mstdn.maud.io')" class="mstdn il half">mstdn.maud.io</a>
                 <a href="javascript:openTootWindow('pawoo.net')" class="mstdn il half">pawoo.net</a>
-                <a href="javascript:openTootWindow('friends.nico')" class="mstdn il half">friends.nico</a>
-                <a href="javascript:openTootWindow('misskey.xyz')" class="misskey il half">misskey.xyz</a>
                 <a href="javascript:openTootWindow('twista.283.cloud')" class="twista il half">twista.283.cloud</a>
+                <a href="javascript:openTootWindow('misskey.io')" class="misskey il half">misskey.io</a>
                 <a href="javascript:openTootWindow('misskey.m544.net')" class="misskey il half">misskey.m544.net</a>
             </div>
             <script>
