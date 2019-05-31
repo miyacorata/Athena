@@ -77,6 +77,10 @@ switch ($code){
             </td>
         </tr>
         <tr>
+            <th>twista</th>
+            <td><a href="https://twista.283.cloud/@miyacorata" target="_blank">@miyacorata@twista.283.cloud</a></td>
+        </tr>
+        <tr>
             <th>im@stodon</th>
             <td><a href="https://imastodon.net/@miyacorata" target="_blank">@miyacorata@imastodon.net</a></td>
         </tr>

@@ -34,6 +34,34 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <p>
         URLなどをお確かめの上もう一度お試しください。リンク切れなどの場合は管理者へお申し出ください。
     </p>
+    <hr style="margin: 50px 10px">
+    <h3>お困りですか？</h3>
+    <p>
+        解決できない問題(リンク切れ等)に遭遇された場合は管理者までお知らせください。
+    </p>
+    <table>
+        <tr>
+            <th>管理者名</th><td>宮野 (miyacorata)</td>
+        </tr>
+        <tr>
+            <th>宮野駅</th>
+            <td>
+                <a href="https://mstdn.miyacorata.net/@miyacorata" target="_blank">@miyacorata@mstdn.miyacorata.net</a><br>
+            </td>
+        </tr>
+        <tr>
+            <th>twista</th>
+            <td><a href="https://twista.283.cloud/@miyacorata" target="_blank">@miyacorata@twista.283.cloud</a></td>
+        </tr>
+        <tr>
+            <th>im@stodon</th>
+            <td><a href="https://imastodon.net/@miyacorata" target="_blank">@miyacorata@imastodon.net</a></td>
+        </tr>
+        <tr>
+            <th>Twitter</th>
+            <td><a href="https://twitter.com/miyacorata" target="_blank">@miyacorata</a></td>
+        </tr>
+    </table>
 </main>
 
 
