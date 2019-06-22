@@ -26,7 +26,7 @@ class Mypage extends CI_Controller {
 
     public function login($instance = null)
     {
-        if($instance === "twista"){
+        if($instance === "twista" || $instance === "twista.283.cloud"){
             $data = array(
                 "appSecret" => config_item('twista_app_secret')
             );
@@ -94,11 +94,18 @@ class Mypage extends CI_Controller {
     }
 
     public function logout(){
+        $this->load->helper('url');
+        $instance = $_SESSION['user']['instance'];
         $_SESSION = array();
         session_regenerate_id();
         $_SESSION['message'] = "logout";
         $this->session->mark_as_flash("message");
-        header("Location: ".config_item('root_url')."mypage");
+        if($this->input->get("relogin")){
+            redirect('mypage/login/'.$instance);
+        }else{
+            redirect('mypage');
+        }
+        //header("Location: ".config_item('root_url')."mypage");
     }
 
     public function settings(){

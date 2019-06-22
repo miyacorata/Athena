@@ -23,5 +23,15 @@ $icon = empty($_SESSION['user']['avatarUrl']) ? config_item('resource_root')."im
     </div>
     <div id="mainbar">
         <h2>名前の変更</h2>
+        <p class="notification">
+            実装しようねがんばろうね
+        </p>
+        <h2>再ログイン</h2>
+        <div class="buttonbox">
+            <a href="<?= config_item('root_url') ?>mypage/logout?relogin=1" class="il twista">再ログイン</a>
+        </div>
+        <p>
+            アカウントのデータ変更・更新を行った場合、ここからログインし直してシステムに再読込させることができます。
+        </p>
     </div>
 </main>
