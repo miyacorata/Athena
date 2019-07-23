@@ -149,7 +149,7 @@ if($unit->name === "ALSTROEMERIA"){
         <h3>Fediverse</h3>
         <div class="buttonbox">
             <a href="https://twista.283.cloud/search?q=<?= $urlname ?>" class="button il trisection" target="_blank">
-                twista でタグ検索
+                twista でキーワード検索
             </a>
             <a href="https://imastodon.net/tags/<?= $urlname ?>" class="button il trisection" target="_blank">
                 im@stodon でタグ検索
