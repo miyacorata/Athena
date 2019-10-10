@@ -98,13 +98,15 @@ if(empty($units)){
         </div>
         <div id="infobox">
             <?php
-            $url = "https://mstdn.miyacorata.net/@283pro.atom";
-            $atom = simplexml_load_file($url);
-            if($atom){
-                foreach ($atom->entry as $entry){
-                    if(mb_strpos($entry->content,"(承前)"))continue;
-                    echo "<h4>".date("Y年n月j日 H:i",strtotime($entry->published) + (60 * 60 * 9 * 0))."配信 - <a href=\"".$entry->id."\" target=\"_blank\">Mastodonで見る</a></h4>".PHP_EOL;
-                    echo $entry->content.PHP_EOL;
+            $url = "https://mstdn.miyacorata.net/@283pro.rss";
+            $feed = file_get_contents($url);
+			$invalid_characters = '/[^\x9\xa\x20-\xD7FF\xE000-\xFFFD]/';
+            $feed = simplexml_load_string($feed);
+            if($feed){
+                foreach ($feed->channel->item as $entry){
+                    if(mb_strpos($entry->description,"(承前)"))continue;
+                    echo "<h4>".date("Y年n月j日 H:i",strtotime($entry->pubDate) + (60 * 60 * 9 * 0))."配信 - <a href=\"".$entry->link."\" target=\"_blank\">Mastodonで見る</a></h4>".PHP_EOL;
+                    echo $entry->description.PHP_EOL;
                 }
             }else{
                 ?>
