@@ -99,9 +99,7 @@ if(empty($units)){
         <div id="infobox">
             <?php
             $url = "https://mstdn.miyacorata.net/@283pro.rss";
-            $feed = file_get_contents($url);
-			$invalid_characters = '/[^\x9\xa\x20-\xD7FF\xE000-\xFFFD]/';
-            $feed = simplexml_load_string($feed);
+            $feed = simplexml_load_file($url);
             if($feed){
                 foreach ($feed->channel->item as $entry){
                     if(mb_strpos($entry->description,"(承前)"))continue;
