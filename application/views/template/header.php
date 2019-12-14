@@ -56,13 +56,17 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         <a href="<?= config_item('root_url') ?>mypage">Mypage</a>
     </nav>
     <div id="share_buttons" data-share_text="<?= $share_text ?>">
-        <a href="javascript:window.open('https://shinycolors.enza.fun','shinycolors','width=1136,height=640,scrollbars=no')" class="sc" style="vertical-align: top;">Go to Production</a>
+        <a href="javascript:void(0)" class="sc" style="vertical-align: top;">Go to Production</a>
         <a href="javascript:void(0)" class="fedi" target="_blank" id="fedi_share">Share</a>
         <script>
             document.getElementById('fedi_share').addEventListener('click',function(event){
                 event.preventDefault();
                 $('#share_to_mastodon').iziModal('open');
-            })
+            });
+			document.querySelector("#share_buttons > a.sc").addEventListener('click',function(event){
+				event.preventDefault();
+				window.open('https://shinycolors.enza.fun','shinycolors','width=1136,height=640,scrollbars=no')
+			})
         </script>
         <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-size="large" data-show-count="false">Tweet</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
@@ -77,10 +81,10 @@ if(ENVIRONMENT === "development"){
     <?php
 }
 
-if(date("md")==="0424"){
+if(date("md")==="1225"){
     ?>
-    <p style="margin: 0;padding: 7px;background: linear-gradient(deeppink,orange);color: white;text-align: center;text-shadow: 0 0 4px rgba(0,0,0,0.7);">
-        THE IDOLM@STER SHINYCOLORS 1st anniversary!
+    <p style="margin: 0;padding: 7px;background: linear-gradient(darkred,red);color: white;text-align: center;text-shadow: 0 0 4px rgba(0,0,0,0.7);">
+        Merry Christmas!
     </p>
     <?php
 }
