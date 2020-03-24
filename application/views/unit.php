@@ -67,10 +67,6 @@ if($unit->name === "ALSTROEMERIA"){
     <hr>
     <div id="sidebar">
         <h2>Information</h2>
-        <h3>MediaSearchについて</h3>
-        <p>
-            MediaSearchでTwitterを検索する場合、Twitter Web Clientが新バージョンでないと正常に動作しません。
-        </p>
         <h3>データ情報</h3>
         <p>
             データベース更新：<?= hsc(ConvertDateString(config_item('db_last_modified'),'ja_year')) ?>
