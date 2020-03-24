@@ -66,3 +66,17 @@ if(!function_exists('Post')){
         return $res;
     }
 }
+
+if(!function_exists('ConvertRuby')){
+	function ConvertRuby($string, $start = '(', $end = ')'){
+		if(!mb_strpos($string,$start) || !mb_strpos($string,$end))return hsc($string);
+		$start_pos = mb_strpos($string,$start);
+		$end_pos = mb_strpos($string,$end);
+		$return  = "<ruby>".hsc(mb_substr($string,0,$start_pos));
+		$return .= "<rp>".hsc($start)."</rp>";
+		$return .= "<rt>".hsc(mb_substr($string,$start_pos + 1,$end_pos - ($start_pos + 1)))."</rt>";
+		$return .= "<rp>".hsc($end)."</rp>";
+		$return .= "</ruby>";
+		return $return;
+	}
+}

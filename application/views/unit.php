@@ -47,7 +47,7 @@ if($unit->name === "ALSTROEMERIA"){
 <main>
     <div id="unitdata">
         <h2><?= hsc($mainname) ?>とは？</h2>
-        <p style="font-size: 28px"><?= hsc($unit->catchcopy) ?></p>
+        <p style="font-size: 28px"><?= ConvertRuby($unit->catchcopy) ?></p>
         <p><?= hsc($unit->description) ?></p>
         <h3>メンバー</h3>
         <div style="text-align: center">
