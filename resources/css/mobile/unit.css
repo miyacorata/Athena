@@ -16,4 +16,11 @@ img#unitimage{
 }
 .member{
     width: 30%;
+	max-width: 110px;
+}
+.member > img:first-child{
+	display: block;
+	width: auto;
+	max-height: 110px;
+	margin-bottom: 4px;
 }

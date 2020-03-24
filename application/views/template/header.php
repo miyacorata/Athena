@@ -27,7 +27,7 @@ if(!empty($title))$share_text = $title." - ".$share_text;
         foreach ($load_css as $css){
             $css_m = config_item('resource_root')."css/mobile/".$css.".css";
             $css = config_item('resource_root')."css/".$css.".css";
-            echo "<link rel='stylesheet' href='{$css}' media='screen'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1200px)'>".PHP_EOL;
+            echo "<link rel='stylesheet' href='{$css}' media='screen'>".PHP_EOL."<link rel='stylesheet' href='{$css_m}' media='screen and (max-width:1330px)'>".PHP_EOL;
         }
     } ?>
     <script
