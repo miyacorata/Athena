@@ -85,7 +85,7 @@ if($unit->name === "ALSTROEMERIA"){
             <a href="https://dic.pixiv.net/a/<?= $urlname ?>" class="button il half" target="_blank">
                 ピクシブ百科事典
             </a>
-            <a href="https://fujiwarahaji.me/idol/sc/<?= $urlname ?>" class="button il half" target="_blank">
+            <a href="https://fujiwarahaji.me/idol/sc/<?= hsc($unit->slug_fhme) ?>" class="button il half" target="_blank">
                 ふじわらはじめ<br>
                 <span class="subtext">アイマス楽曲DBで曲一覧を見る</span>
             </a>
